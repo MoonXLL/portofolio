@@ -37,6 +37,11 @@ def submit_form():
         return redirect('/thankyou.html')
     else:
         return ' something went wrong'
+    
+@app.errorhandler(500)
+def internal_error(error):
+    return f"Terjadi kesalahan: {error}", 500
+
 
 
 
